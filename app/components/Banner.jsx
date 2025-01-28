@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+import HandleClaimCredit from "./utils/HandleClaimCredit";
 
-export default function Banner({ handleClaimCredit }) {
+export default function Banner() {
   return (
-    <div
-      className="bg-cover bg-center bg-no-repeat bg-black md:rounded-3xl w-full h-full md:h-[35.5rem] mb-10"
-      style={{ backgroundImage: `url(https://i.ibb.co/F5B1rQ8/bg-shadow.png)` }}
-    >
+    <div className="bg-[url('https://i.ibb.co/F5B1rQ8/bg-shadow.png')] bg-cover bg-center bg-no-repeat bg-black md:rounded-3xl w-full h-full md:h-[35.5rem] mb-10">
       <div className="w-11/12 md:w-9/12 mx-auto flex flex-col justify-center items-center text-center h-full space-y-4 py-6 md:space-y-6">
         <div>
           <img
@@ -21,12 +19,7 @@ export default function Banner({ handleClaimCredit }) {
           Beyond Boundaries Beyond Limits
         </p>
         <div className="text-base md:text-xl font-semibold">
-          <button
-            onClick={handleClaimCredit}
-            className="btn bg-gradient-to-r from-pink-500 to-yellow-400 border-none px-4 py-2 md:px-6 md:py-3 rounded-lg"
-          >
-            Claim Free Credit
-          </button>
+          <HandleClaimCredit></HandleClaimCredit>
         </div>
       </div>
     </div>

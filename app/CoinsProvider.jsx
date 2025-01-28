@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { createContext, useState } from "react";
 
@@ -6,6 +6,8 @@ export const CoinContext = createContext({});
 
 export default function CoinsProvider({ children }) {
   const [coins, setCoins] = useState(0);
+  // State for chosen players
+  const [choosePlayer, setChoosePlayer] = useState([]);
 
   // State for toggle buttons
   const [isActive, setIsActive] = useState({
@@ -22,9 +24,6 @@ export default function CoinsProvider({ children }) {
     const player = choosePlayer.find((p) => p.playerId == id);
     setCoins(coins + player.price);
   };
-
-  // State for chosen players
-  const [choosePlayer, setChoosePlayer] = useState([]);
 
   // Player delete function
   const handlePlayerDelete = (id) => {
@@ -82,8 +81,6 @@ export default function CoinsProvider({ children }) {
   };
 
   return (
-    <CoinContext.Provider value={coinsInfo}>
-      {children}
-    </CoinContext.Provider>
+    <CoinContext.Provider value={coinsInfo}>{children}</CoinContext.Provider>
   );
 }

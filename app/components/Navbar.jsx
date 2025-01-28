@@ -1,5 +1,5 @@
 
-export default function Navbar({ coins }) {
+export default function Navbar({coins}) {
 
     return (
       <div className="sticky top-0 z-50 backdrop-blur-lg bg-white/80">
