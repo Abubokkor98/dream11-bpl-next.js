@@ -1,5 +1,4 @@
 import Banner from "./components/Banner";
-import Navbar from "./components/Navbar";
 import NavbarWrapper from "./components/NavbarWrapper";
 
 export default function HomePage() {
