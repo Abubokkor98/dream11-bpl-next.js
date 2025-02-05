@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} max-w-screen-xl mx-auto ${geistMono.variable} antialiased`}
       >
         <CoinsProvider>{children}</CoinsProvider>
       </body>

@@ -78,6 +78,10 @@ export default function CoinsProvider({ children }) {
     handleChoosePlayer,
     handlePlayerDelete,
     handleActiveStatus,
+    handleMinusCoins,
+    handlePriceBack,
+    choosePlayer,
+    isActive,
   };
 
   return (
