@@ -41,19 +41,28 @@ export default function CoinsProvider({ children }) {
   };
 
   // Active button function
+  // const handleActiveStatus = (status) => {
+  //   if (status === "available") {
+  //     setIsActive({
+  //       available: true,
+  //       status: "available",
+  //     });
+  //   } else {
+  //     setIsActive({
+  //       available: false,
+  //       status: "selected",
+  //     });
+  //   }
+  // };
   const handleActiveStatus = (status) => {
-    if (status === "available") {
+    if (isActive.status !== status) {
       setIsActive({
-        available: true,
-        status: "available",
-      });
-    } else {
-      setIsActive({
-        available: false,
-        status: "selected",
+        available: status === "available",
+        status,
       });
     }
   };
+  
 
   const handleChoosePlayer = (player) => {
     const isExist = choosePlayer.find((p) => p.playerId == player.playerId);

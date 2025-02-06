@@ -5,11 +5,9 @@ export const getPlayers = async () => {
   return res.json();
 };
 
-export default async function AllPlayers() {
-  const players = await getPlayers();
+export default function AllPlayers({ players }) {
   return (
     <div>
-      {/* players */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-2 md:p-0">
         {players.map((player) => (
           <SinglePlayer key={player.playerId} player={player} />

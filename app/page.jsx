@@ -1,18 +1,18 @@
-import AllPlayers from "./components/AllPlayers";
+import  { getPlayers } from "./components/AllPlayers";
 import AvailablePlayers from "./components/AvailablePlayers";
 import Banner from "./components/Banner";
 import NavbarWrapper from "./components/NavbarWrapper";
-import SelectedPlayers from "./components/SelectedPlayers";
+import PlayersSection from "./components/PlayersSection";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const playersData = await getPlayers(); 
+
   return (
     <div>
-      {/* <Navbar></Navbar> */}
       <NavbarWrapper />
       <Banner />
       <AvailablePlayers />
-      <AllPlayers/>
-      <SelectedPlayers/>
+      <PlayersSection players={playersData} />
     </div>
   );
 }
