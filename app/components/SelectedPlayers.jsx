@@ -2,9 +2,11 @@
 
 import { useContext } from "react";
 import { CoinContext } from "../CoinsProvider";
+import { MdDelete } from "react-icons/md";
 
 export default function SelectedPlayers() {
-  const { choosePlayer, handlePlayerDelete, handleActiveStatus } = useContext(CoinContext);
+  const { choosePlayer, handlePlayerDelete, handleActiveStatus } =
+    useContext(CoinContext);
 
   const handleAddMoreClick = () => {
     handleActiveStatus("available");
@@ -33,8 +35,7 @@ export default function SelectedPlayers() {
             {/* Right side */}
             <div className="flex items-center">
               <button onClick={() => handlePlayerDelete(player.playerId)}>
-                {/* <i className="fa-solid fa-trash text-xl text-red-400"></i> */}
-                Delete
+                <MdDelete className="text-2xl text-red-600" />
               </button>
             </div>
           </div>
