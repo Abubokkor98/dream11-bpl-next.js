@@ -43,7 +43,7 @@ export default function SelectedPlayers() {
       {/* Button */}
       <div className="flex justify-center mt-4">
         <button
-          className="btn bg-gradient-to-r from-pink-500 to-yellow-400"
+          className="bg-gradient-to-r from-pink-500 to-yellow-400 border-none px-4 py-2 md:px-6 md:py-3 rounded-lg"
           onClick={handleAddMoreClick}
         >
           Add More Player
