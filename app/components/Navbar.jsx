@@ -1,7 +1,7 @@
 export default function Navbar({ coins }) {
   return (
     <div className="sticky top-0 z-50 backdrop-blur-lg bg-white/80">
-      <div className="p-4 flex items-center justify-between">
+      <div className="p-4 px-4 flex items-center justify-between">
         {/* logo and coins */}
         <div className="flex items-center space-x-3">
           <img src="/logo.png" alt="Logo" className="h-10 w-auto rounded-lg" />
