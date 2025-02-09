@@ -2,7 +2,7 @@ import { getPlayers } from "./components/AllPlayers";
 import AvailablePlayers from "./components/AvailablePlayers";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
-import NavbarWrapper from "./components/NavbarWrapper";
+import Navbar from "./components/Navbar";
 import PlayersSection from "./components/PlayersSection";
 
 export default async function HomePage() {
@@ -10,7 +10,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <NavbarWrapper />
+      <Navbar/>
       <main className="px-4">
         <Banner />
         <AvailablePlayers />
