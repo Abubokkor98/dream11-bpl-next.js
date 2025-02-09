@@ -1,43 +1,47 @@
 import ChoosePlayerBtn from "./utils/ChoosePlayerBtn";
+import { FaFlag, FaUser } from "react-icons/fa";
 
 export default function SinglePlayer({ player }) {
-  const { name, country, image, role, battingType, bowlingType, price } =
-    player;
+  const { name, country, image, role, battingType, bowlingType, price } = player;
 
   return (
-    <div className="card-compact border rounded-md p-2">
-      <figure>
-        <img src={image} alt="Player image" className="rounded-md" />
+    <div className="border rounded-lg shadow-md p-4 bg-white hover:shadow-lg transition-shadow duration-300">
+      {/* Player Image */}
+      <figure className="mb-4">
+        <img src={image} alt={name} className="rounded-lg w-full h-48 object-cover" />
       </figure>
-      <div className="card-body">
-        <div className="flex gap-2 items-center">
-          <div>
-            <i className="fa-solid fa-user text-xl"></i>
+
+      {/* Player Info */}
+      <div className="space-y-3">
+        {/* Name & Country */}
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <FaUser className="text-gray-600" />
+            <h2 className="text-lg font-semibold">{name}</h2>
           </div>
-          <h2 className="card-title">{name}</h2>
-        </div>
-        <div className="flex justify-between">
-          {/* Left div */}
-          <div className="flex gap-2 items-center">
-            <div>
-              <i className="fa-solid fa-flag"></i>
-            </div>
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <FaFlag className="text-blue-500" />
             <p>{country}</p>
           </div>
-          {/* Right div */}
-          <div className="bg-slate-100 rounded-md p-1">
-            <p>{role}</p>
+        </div>
+
+        {/* Role */}
+        <div className="bg-gray-100 text-gray-700 rounded-md px-2 py-1 inline-block text-sm">
+          {role}
+        </div>
+
+        {/* Rating */}
+        <div>
+          <h2 className="font-bold text-gray-700">Rating</h2>
+          <div className="flex justify-between text-sm text-gray-600">
+            <h2 className="font-medium">{battingType}</h2>
+            <h2>{bowlingType}</h2>
           </div>
         </div>
-        <hr />
-        <h2 className="font-bold">Rating</h2>
-        <div className="flex justify-between">
-          <h2 className="font-semibold">{battingType}</h2>
-          <h2>{bowlingType}</h2>
-        </div>
-        <div className="flex justify-between items-center">
-          <h2 className="font-semibold">Price: ${price}</h2>
-          {/* btn */}
+
+        {/* Price & Button */}
+        <div className="flex justify-between items-center mt-3">
+          <h2 className="font-semibold text-lg text-yellow-600">Price: ${price}</h2>
           <ChoosePlayerBtn player={player} />
         </div>
       </div>
